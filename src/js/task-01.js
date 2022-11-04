@@ -2,6 +2,7 @@
 
 const categoriesEl = document.getElementById("categories");
 const itemEl = document.querySelectorAll(".item");
+console.log(itemEl);
 
 const getAmountCategories = () => {
   const numbersOfCategories = categoriesEl.querySelectorAll(".item").length;
@@ -9,7 +10,13 @@ const getAmountCategories = () => {
 };
 
 const getTitleItemAndAmountOfCategories = () => {
-  itemEl.forEach((item) => {
+  //   itemEl.forEach((item) => {
+  //     const titleItem = item.querySelector("h2");
+  //     const amountEl = item.querySelectorAll(".item ul li").length;
+  //     console.log(`Category: ${titleItem.textContent}`);
+  //     console.log(`Elements: ${amountEl}`);
+  //   });
+  const titleItem = [...itemEl].map((item) => {
     const titleItem = item.querySelector("h2");
     const amountEl = item.querySelectorAll(".item ul li").length;
     console.log(`Category: ${titleItem.textContent}`);
