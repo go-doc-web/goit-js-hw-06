@@ -17,10 +17,8 @@ const getTitleItemAndAmountOfCategories = () => {
   //     console.log(`Elements: ${amountEl}`);
   //   });
   const result = [...itemEl].map((item) => {
-    const titleItem = item.querySelector("h2");
-    const amountEl = item.querySelectorAll(".item ul li").length;
-    console.log(`Category: ${titleItem.textContent}`);
-    console.log(`Elements: ${amountEl}`);
+    console.log(`Category: ${item.querySelector("h2").textContent}`);
+    console.log(`Elements: ${item.querySelectorAll(".item ul li").length}`);
   });
 };
 
