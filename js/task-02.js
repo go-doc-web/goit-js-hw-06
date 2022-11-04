@@ -13,18 +13,26 @@ const listIngridients = document.querySelector("#ingredients");
 
 // createElementsItem перебирает массив данных и создает колекцию елементов  LI
 
-const createElementsItem = (array) => {
-  const itemsElement = array.reduce((acc, item) => {
+// const createElementsLi = (array) => {
+//   const itemsElement = array.reduce((acc, item) => {
+//     const liEl = document.createElement("li");
+//     liEl.textContent = item;
+//     liEl.classList.add("item");
+//     acc.push(liEl);
+//     return acc;
+//   }, []);
+//   return itemsElement;
+// };
+
+const createElementsLi = (array) => {
+  const itemsElement = array.map((item) => {
     const liEl = document.createElement("li");
     liEl.textContent = item;
     liEl.classList.add("item");
-    acc.push(liEl);
-    return acc;
-  }, []);
+    return liEl;
+  });
   return itemsElement;
 };
-
-console.log(createElementsItem(ingredients));
 
 //Функция renderItemList рендерит колекцию елементов
 
@@ -32,5 +40,5 @@ const renderItemList = (list, items) => {
   list.append(...items);
 };
 
-const liElements = createElementsItem(ingredients);
+const liElements = createElementsLi(ingredients);
 renderItemList(listIngridients, liElements);
