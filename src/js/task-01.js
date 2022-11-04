@@ -3,8 +3,6 @@
 const categoriesEl = document.getElementById("categories");
 const itemEl = document.querySelectorAll(".item");
 
-console.log(itemEl);
-
 const getAmountCategories = () => {
   const numbersOfCategories = categoriesEl.querySelectorAll(".item").length;
   console.log(`Number of categories: ${numbersOfCategories}`);
