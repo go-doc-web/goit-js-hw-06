@@ -37,14 +37,9 @@ const counter = {
     this.valueTextContent();
   },
 };
+
 const onIncrementBtnClick = counter.onIncrementBtn.bind(counter);
 const onDecrementBtnClick = counter.onDecrementBtn.bind(counter);
 
 counter.incrementBtn.addEventListener("click", onIncrementBtnClick);
 counter.decrementBtn.addEventListener("click", onDecrementBtnClick);
-
-// function onIncrementBtnClick() {
-//   counter.increment();
-//   counter.negativeColorValue();
-//   counter.valueTextContent();
-// }
