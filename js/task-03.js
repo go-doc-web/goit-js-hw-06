@@ -1,14 +1,39 @@
-const images = [
-  {
-    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'White and Black Long Fur Cat',
-  },
-  {
-    url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
-  },
-  {
-    url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Group of Horses Running',
-  },
-];
+import images from "./data/data-task-03.js";
+
+const refs = {
+  gallaryEl: document.querySelector(".gallery"),
+  container: document.createElement("div"),
+  ancorToMenu: document.querySelector("p"),
+  titleGallary: document.createElement("h2"),
+};
+
+const createImgTemplate = (url, alt) => {
+  return `      
+      <li class="list-item">
+        <img src="${url}" alt="${alt}" />
+      </li>`;
+};
+
+const renderGallary = (list, itemEl) => {
+  list.insertAdjacentHTML("beforeend", itemEl);
+};
+
+const imgEl = images
+  .map(({ url, alt }) => createImgTemplate(url, alt))
+  .join("");
+
+renderGallary(refs.gallaryEl, imgEl);
+
+//----------------------Немного добавил магии -----------------------
+
+refs.gallaryEl.classList.add("list");
+
+refs.container.classList.add("container");
+refs.container.append(refs.gallaryEl);
+refs.ancorToMenu.after(refs.container);
+
+refs.titleGallary.textContent = "animals";
+refs.titleGallary.style.textTransform = "uppercase";
+
+refs.container.prepend(refs.titleGallary);
+refs.titleGallary.style.textTransform = "uppercase";

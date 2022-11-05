@@ -13,6 +13,8 @@ const listIngridients = document.querySelector("#ingredients");
 
 // createElementsItem перебирает массив данных и создает колекцию елементов  LI
 
+// используя reduce
+
 // const createElementsLi = (array) => {
 //   const itemsElement = array.reduce((acc, item) => {
 //     const liEl = document.createElement("li");
@@ -23,6 +25,8 @@ const listIngridients = document.querySelector("#ingredients");
 //   }, []);
 //   return itemsElement;
 // };
+
+// Испоьзуя map
 
 const createElementsLi = (array) => {
   const itemsElement = array.map((item) => {
