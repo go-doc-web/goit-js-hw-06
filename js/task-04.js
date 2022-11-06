@@ -15,14 +15,14 @@ const counter = {
 
   negativeColorValue() {
     if (this.value < 0) {
-      counter.counterValue.style.color = "red";
+      this.counterValue.style.color = "red";
     } else {
-      counter.counterValue.style.color = "inherit";
+      this.counterValue.style.color = "inherit";
     }
   },
 
   valueTextContent() {
-    return (counter.counterValue.textContent = counter.value);
+    return (this.counterValue.textContent = this.value);
   },
 
   onIncrementBtn() {
