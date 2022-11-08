@@ -14,6 +14,10 @@ const refs = {
 
 refs.loginForm.addEventListener("submit", onLoginFormSubmit);
 
+const resetForm = (e) => {
+  e.currentTarget.reset();
+};
+
 function onLoginFormSubmit(e) {
   e.preventDefault();
   const {
@@ -22,14 +26,16 @@ function onLoginFormSubmit(e) {
 
   if (email.value === "" || password.value === "") {
     alert("! Заполнены не все поля формы");
+
+    resetForm(e);
   }
 
   const dataForm = {
     email: email.value,
     password: password.value,
   };
-  //   console.log(dataForm);
-  e.currentTarget.reset();
+
+  resetForm(e);
 
   console.log(dataForm);
 }
