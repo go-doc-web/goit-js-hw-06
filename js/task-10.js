@@ -28,7 +28,7 @@ function onDestroyBtnClick() {
 function createBoxes(amount) {
   const arrBoxes = [];
   for (
-    let i = 0, width = 300, heigth = 30;
+    let i = 0, width = 30, heigth = 30;
     i < amount;
     i += 1, width += 10, heigth += 10
   ) {
@@ -39,6 +39,7 @@ function createBoxes(amount) {
     box.style.backgroundColor = getRandomHexColor();
     arrBoxes.push(box);
   }
+  refs.boxes.innerHTML = "";
   refs.boxes.append(...arrBoxes);
 }
 
