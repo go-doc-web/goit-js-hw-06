@@ -11,10 +11,10 @@ refs.input.addEventListener("blur", onInputBlur);
 function onInputBlur(e) {
   const currentSymbolInInput = checkForSpace(e).length;
 
-  if (currentSymbolInInput <= defaultSymbolInInput) {
+  if (currentSymbolInInput === defaultSymbolInInput) {
     refs.input.classList.add("valid");
     delClass(refs.input, "invalid");
-  } else if (currentSymbolInInput > defaultSymbolInInput) {
+  } else {
     refs.input.classList.add("invalid");
     delClass(refs.input, "valid");
   }
