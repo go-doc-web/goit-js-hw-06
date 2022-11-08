@@ -26,8 +26,8 @@ function onLoginFormSubmit(e) {
 
   if (email.value === "" || password.value === "") {
     alert("! Заполнены не все поля формы");
-
     resetForm(e);
+    return;
   }
 
   const dataForm = {
